@@ -1,0 +1,49 @@
+//https://practice.geeksforgeeks.org/problems/spirally-traversing-a-matrix/0
+#include <iostream>
+using namespace std;
+
+int main() {
+	//code
+	int t;
+	cin>>t;
+	while(t--){
+	    int a,b;
+	    cin>>a>>b;
+	    int arr[a][b];
+	    for(int i=0;i<a;i++){
+	        for(int j=0;j<b;j++){
+	            cin>>arr[i][j];
+	        }
+	    }
+	    int maxr=a-1;
+	    int maxc=b-1;
+	    int minr=0;
+	    int minc=0;
+	    int cnt=0;
+	    int tne=a*b;
+	     while(tne>cnt){
+	     for(int i=minr, j=minc;j<=maxc && cnt<tne;j++){
+	         cout<<arr[i][j]<<" ";
+	         cnt++;
+	     }
+	    minr++;
+	    for(int i=minr,j=maxc;i<=maxr && cnt<tne;i++){
+	        cout<<arr[i][j]<<" ";
+	        cnt++;
+	    }
+	    maxc--;
+	    for(int i=maxr,j=maxc;j>=minc && cnt<tne;j--){
+	        cout<<arr[i][j]<<" ";
+	        cnt++;
+	    }maxr--;
+	    
+	    for(int i=maxr, j=minc;i>=minr && cnt<tne ;i--){
+	        cout<<arr[i][j]<<" ";
+	        cnt++;
+	    }
+	    minc++;
+	}
+	cout<<"\n";
+	
+	}
+	return 0;
