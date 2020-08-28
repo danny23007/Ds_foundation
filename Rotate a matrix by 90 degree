@@ -1,0 +1,45 @@
+#include<iostream>
+using namespace std;
+
+
+int main()
+{
+    int a,b;
+    cin>>a>>b;
+    int arr[a][b];
+    int temp;
+    for(int i=0;i<a;i++){
+     for(int j=0;j<b;j++){
+         cin>>arr[i][j];
+     }    
+    }
+    for(int i=0;i<a;i++){     // loop for transpse of matrix
+        for(int j=i;j<b;j++){    // for using only upper traingle of matrix
+            temp=arr[i][j];
+            arr[i][j]=arr[j][i];
+            arr[j][i]=temp;
+        }
+    }
+    
+    
+    for(int i=0;i<a;i++){    //to reverse array     a b c d --> d c b a
+        int li=0;
+        int ri=a-1;
+        while(li<ri){
+            int temp=arr[i][li];
+            arr[i][li]=arr[i][ri];
+            arr[i][ri]=temp;
+            li++;
+            ri--;
+        }
+        
+    }
+    for(int i=0;i<a;i++){
+     for(int j=0;j<b;j++){
+         cout<<arr[i][j]<<" ";
+     }    
+     cout<<"\n";
+    }
+    
+    return 0;
+}
