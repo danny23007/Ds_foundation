@@ -1,0 +1,33 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int arr[4][4]={{11,12,13,14},
+    {21,22,23,24},
+    {31,32,33,34},
+    {41,42,43,44}};
+    
+    for(int i=0;i<4;i++){
+        int svj=0;
+        for(int j=1;j<4;j++){
+            if(arr[i][j]<arr[i][svj]){    // to find smallest element in row
+                svj=j;
+            }
+        }
+        bool key=true;
+        for(int k=0;k<4;k++){
+            if(arr[k][svj]>arr[i][svj]){    // to verify if it is largest element in column
+                key=false;
+                break;
+            }
+        }
+        if(key==true){
+            cout<<arr[i][svj];
+            return 0;
+        }
+    }
+cout<<"Invalid input";
+
+    return 0;
+}
