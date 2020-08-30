@@ -1,0 +1,17 @@
+#include<iostream>
+using namespace std;
+int linear(int x,int m){
+    if(m==0){
+        return 1;
+    }
+    int y=linear(x,m-1);
+    int ans=x*y;
+    return ans;
+}
+int main(){
+    int x,n,ans;
+    cin>>x>>n;
+    ans=linear(x,n);
+    cout<<ans;
+    
+}
