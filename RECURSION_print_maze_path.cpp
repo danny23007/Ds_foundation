@@ -4,7 +4,7 @@ using namespace std;
 	if(sr>dr || sc>dc){
 		return ;
 	}
-	if(sr==dr &&sc==dr){
+	if(sr==dr &&sc==dc){
 		cout<<output<<endl;
 		return;
 	}
